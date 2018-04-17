@@ -1,10 +1,18 @@
 # memory-game-project
-My Udacity Memory Game project
-By: Abeer Uthman
+It is a javascript project called memory game, where you can click over 16 cards to check the matched 
 
-How to play a memory game:
-1 - you had to click thae cards on the game
-2 - if two matched they will still opend
-3 - if you find all matched cards you will win
+Prerequisites
+no thing need.
 
-Have a nice luck 0_0
+Installing
+no need cause it is online
+
+Deployment
+it can be deploy by adding additinal css styles to make the game style better
+
+Built With
+Javascript language + CSS + HTML
+
+Author
+Abeer Uthman 
+
