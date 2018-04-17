@@ -1,3 +1,33 @@
+
+@media screen and (max-width: 600px) {
+  ul.deck {
+    width: 340px;
+    min-height: 360px;
+}
+    ul.deck li.card {
+    height: 64px;
+    width: 64px;
+}
+    section.score-panel {
+    width: 300px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+  ul.deck {
+    width: 940px;
+    min-height: 960px;
+}
+    ul.deck li.card {
+    height: 194px;
+    width: 194px;
+}
+    section.score-panel {
+    width: 900px;
+    margin-bottom: 100px;
+}
+}
+
 html {
     box-sizing: border-box;
 }
