@@ -3,7 +3,6 @@
  */
 let cardSymbols = ["diamond","paper-plane-o","anchor","bolt","cube","leaf","bicycle","bomb","diamond","paper-plane-o","anchor","bolt","cube","leaf","bicycle","bomb"];
 let deck = document.getElementsByClassName("deck");
-let scorePanel = document.getElementsByClassName("score-panel");
 let stars = document.getElementsByClassName("stars");
 let displyMov = document.getElementsByClassName("moves");
 let timer = document.getElementsByClassName("timer");
@@ -61,12 +60,9 @@ function initial()
 }
 
 //function to restart the game
-function reStart(event)
+function reStart()
 {
- if(event.target.classList.contains("restart"))
- {
   initial();
- }
 }
 
 //function to calculat the playing time
@@ -124,9 +120,9 @@ function notMatchedCards()
 //function that locks the matched cards in the open position
 function matchedCards()
 {
-  	openCard[0].setAttribute('class', 'card match');
+    openCard[0].setAttribute('class', 'card match');
     openCard[1].setAttribute('class', 'card match');
- 	matched = matched + 2;
+    matched = matched + 2;
     openCard = [];
     if (matched == 16)
      { 
@@ -148,13 +144,14 @@ function opend(target)
    openCard.push(target);
    if (openCard.length > 1)
  	{ 
+           movesAndRating();
  	   if (openCard[0].innerHTML === openCard[1].innerHTML)
  		{
            matchedCards();
  		}
       else
         {
-           notMatchedCards(); 
+           setTimeout(notMatchedCards, 300); 
         }
  	}
 }
@@ -190,15 +187,11 @@ function startDeck()
 function main()
 {    
    startDeck();
-   scorePanel[0].addEventListener('click',function(){ 
-           reStart(event);
-  
-    });
- 
-    deck[0].addEventListener('click',function(){ 
+   deck[0].addEventListener('click',function(event){
+            event = event || window.event;
+            event.preventDefault();
             display(event);
-    });
-    
+   }); 
 }
 
 window.onload = main();
