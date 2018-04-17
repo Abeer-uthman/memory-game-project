@@ -120,9 +120,9 @@ function notMatchedCards()
 //function that locks the matched cards in the open position
 function matchedCards()
 {
-  	openCard[0].setAttribute('class', 'card match');
+    openCard[0].setAttribute('class', 'card match');
     openCard[1].setAttribute('class', 'card match');
- 	matched = matched + 2;
+    matched = matched + 2;
     openCard = [];
     if (matched == 16)
      { 
@@ -144,6 +144,7 @@ function opend(target)
    openCard.push(target);
    if (openCard.length > 1)
  	{ 
+           movesAndRating();
  	   if (openCard[0].innerHTML === openCard[1].innerHTML)
  		{
            matchedCards();
